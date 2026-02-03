@@ -1,5 +1,5 @@
 # vs_AQVisualizer
-An adaptive quantization result visualization for Vapoursynth.<br>
+An adaptive quantization result visualization for Vapoursynth. The AQ algorithm is implemented from x264.<br>
 First available draft, speed optimization is ongoing. Documentation is also preparing. <br>
 Currently only YUV420P8 and YUV444P8 formats are supported. 10-bit support will be introduced in the future.
 
