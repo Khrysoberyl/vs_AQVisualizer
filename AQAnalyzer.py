@@ -272,7 +272,7 @@ fin Δqp map (Δqp0 + Δqp) for mode 1, 2 and 3: [{fqommm1_min:.2f}, {fqommm1_ma
         core.log_message(vs.MESSAGE_TYPE_INFORMATION, stats)
     return fout
 
-def wrapper(core, clip, aq_mode: int = 1, diff: int = 0, show_fin_delta_qp_map: int = 0, display_stats: int = 0, vmin: float = 0.0, vmax: float = 0.0, matrix = None):
+def wrapper(clip: vs.VideoNode, aq_mode: int = 1, diff: int = 0, show_fin_delta_qp_map: int = 0, display_stats: int = 0, vmin: float = 0.0, vmax: float = 0.0, matrix = None):
     """
     aq_mode: show AC energy map -> 0
           show aq-mode = 1 map -> 1
@@ -284,7 +284,7 @@ def wrapper(core, clip, aq_mode: int = 1, diff: int = 0, show_fin_delta_qp_map: 
           Do not calculate difference between modes -> 0
     show_fin_delta_qp_map: display only Δqp_adj -> 0
                            display Δqp0 + Δqp_adj -> 1
-    AQ final Δqp =  Δqp0 + Δqp
+    AQ final Δqp =  Δqp0 + Δqp_adj
             Δqp0 is based on AC energy only, not related to aq-strength
             Δqp_adj is adjustment on top of Δqp0, and proportional to aq-strength.
     display_stats: Show stats of qp maps to help determine min and max values in colormaps
@@ -311,6 +311,6 @@ def wrapper(core, clip, aq_mode: int = 1, diff: int = 0, show_fin_delta_qp_map: 
     clip2 = core.std.SetFrameProp(clip2, prop="_stats", data = "") #Used to deliver qp stats if needed
     clip2 = core.std.SetFrameProp(clip2, prop="_vmin", floatval = vmin)
     clip2 = core.std.SetFrameProp(clip2, prop="_vmax", floatval = vmax)
-    rgb_clip = core.std.ModifyFrame(padded_clip, [clip, clip2], fill_frame)
+    rgb_clip = core.std.ModifyFrame(clip2, [clip, clip2], fill_frame)
     clip_out = mvf.ToYUV(rgb_clip, full=True, css=css, matrix=matrix)
     return clip_out
