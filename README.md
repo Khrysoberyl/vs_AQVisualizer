@@ -43,3 +43,27 @@ AQAnalyzer.wrapper(clip: vs.VideoNode, aq_mode: int = 1, diff: int = 0, show_fin
 - `aq_mode = 0` gets highest priority as AC energy is calculated before all the Δqp maps.
 - Non-zero `diff` overrides non-zero `aq_mode`.
 - `diff = 0` displays corresponding aq_mode maps. Use `show_fin_delta_qp_map` to control displaying Δqp0 or Δqp_adj.
+
+# Example1
+## Source frame:
+![Source](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/src.png)
+## AQ-Mode = 1 Δqp_adj map
+![aqmode1](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/aqmode1.png)
+## Expected Stats if Enabled
+![stats](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/stats.png)
+
+# Example2
+## Source frame:
+![Source](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/src2.png)
+## AQ-Mode = 1 Δqp_adj map
+![aqmode1](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/aqmode1_2.png)
+## Expected Stats if Enabled
+![stats](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/stats2.png)
+
+# Example3
+## Source frame:
+![Source](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/src3.png)
+## AQ-Mode = 1 Δqp_adj map
+![aqmode1](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/aqmode2_3.png)
+## Expected Stats if Enabled
+![stats](https://github.com/Khrysoberyl/vs_AQVisualizer/blob/main/docs/stats3.png)
