@@ -3,6 +3,12 @@ An adaptive quantization result visualization for Vapoursynth.<br>
 First available draft, speed optimization is ongoing. Documentation is also preparing. <br>
 Currently only YUV420P8 and YUV444P8 formats are supported. 10-bit support will be introduced in the future.
 
+# Dependencies
+- numpy
+- matplotlib
+- mvsfunc
+- vapoursynth
+
 # Very Basic Usage
 ```Python
 import AQAnalyzer
