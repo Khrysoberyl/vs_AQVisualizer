@@ -1,5 +1,5 @@
 # vs_AQVisualizer
-An adaptive quantization result visualization for Vapoursynth
+An adaptive quantization result visualization for Vapoursynth.<br>
 First available draft, speed optimization is ongoing. Documentation is also preparing. 
 
 # Very Basic Usage
