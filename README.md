@@ -1,7 +1,8 @@
 # vs_AQVisualizer
 An adaptive quantization result visualization for Vapoursynth. The AQ algorithm is implemented from x264.<br>
-First available draft, speed optimization is ongoing. Documentation is also preparing. <br>
-Currently only YUV420P8 and YUV444P8 formats are supported. 10-bit support will be introduced in the future.
+Stable release is optimized for speed. Typical speed for 1080p clips is 30-40 fps depending on the specific resolution. <br>
+Another version is made by removing the dependency of matplotlib and use a custom bwr colormap to render the image. It is ~10% faster than the stable release, but because of different implementation, it is NOT bit-identical compared to the stable release.<br>
+Only YUV420 and YUV444 formats are supported. 8-16 bit formats are supported by the stable release.
 
 # Dependencies
 - numpy
