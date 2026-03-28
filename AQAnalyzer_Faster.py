@@ -35,7 +35,7 @@ def ac_energy_img(MB_list: list, planes: list = [0, 1, 2]):
     #Calculate AC energy given the MB tensor, planes used for calculation can be tuned
     ac_energy = 0
     for plane in planes:
-        mb = MB_list[plane].astype(np.uint32, copy=False) #prevent overflow
+        mb = MB_list[plane].astype(np.uint64) #prevent overflow
         normal_sum = mb.sum(axis = (-1,-2))
         square_sum = np.square(mb).sum(axis = (-1,-2))
         MBsize = mb.shape[-1]*mb.shape[-2]
